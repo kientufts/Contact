@@ -13,4 +13,6 @@ public interface ContactDAO {
 	public Contact getContact(int contactId);
 
 	public void deleteContact(int contactId);
+
+	public List<Contact> searchContacts(String searchName);
 }

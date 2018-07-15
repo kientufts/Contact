@@ -39,4 +39,10 @@ public class ContactServiceImpl implements ContactService {
 		contactDAO.deleteContact(contactId);
 	}
 
+	@Override
+	@Transactional
+	public List<Contact> searchContacts(String searchName) {
+		return contactDAO.searchContacts(searchName);
+	}
+
 }

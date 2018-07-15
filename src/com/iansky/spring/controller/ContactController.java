@@ -54,5 +54,12 @@ public class ContactController {
 		contactService.deleteContact(contactId);
 		return "redirect:/contact/list";
 	}
+	
+	@PostMapping("/search")
+	public String searchContacts(@RequestParam("searchName") String searchName, Model model) {
+		List<Contact> contacts = contactService.searchContacts(searchName);
+		model.addAttribute("contacts", contacts);
+		return "list-contacts";
+	}
 
 }

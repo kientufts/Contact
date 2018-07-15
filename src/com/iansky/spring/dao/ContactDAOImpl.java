@@ -45,4 +45,22 @@ public class ContactDAOImpl implements ContactDAO {
 		query.executeUpdate();
 	}
 
+	@Override
+	public List<Contact> searchContacts(String searchName) {
+		Session session = sessionFactory.getCurrentSession();
+		Query query;
+		// only search by name if searchName is not empty
+		if (searchName != null && searchName.trim().length() > 0) {
+			// search for firstName or lastName ... case insensitive
+			query = session.createQuery("from Contact where lower(firstName) like:name or lower(lastName) like:name",
+					Contact.class);
+			query.setParameter("name", "%"+searchName.toLowerCase()+"%");
+		} else {
+			// get all contacts when searchName is null
+			query = session.createQuery("from Contact", Contact.class);
+		}
+		List<Contact> contacts = query.getResultList();
+		return contacts;
+	}
+
 }
