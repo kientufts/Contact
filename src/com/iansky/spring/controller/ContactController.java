@@ -8,20 +8,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.iansky.spring.dao.ContactDAO;
 import com.iansky.spring.entity.Contact;
+import com.iansky.spring.service.ContactService;
 
 @Controller
 @RequestMapping("/contact")
 public class ContactController {
 	
 	@Autowired
-	private ContactDAO contactDao;
+	private ContactService contactService;
 	
 	@GetMapping("/list")
 	public String listContacts(Model model) {
 		
-		List<Contact> contacts = contactDao.getContacts();
+		List<Contact> contacts = contactService.getContacts();
 		model.addAttribute("contacts", contacts);
 		return "list-contacts";
 	}
