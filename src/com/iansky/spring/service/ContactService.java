@@ -7,4 +7,6 @@ import com.iansky.spring.entity.Contact;
 public interface ContactService {
 
 	public List<Contact> getContacts();
+
+	public void addContact(Contact contact);
 }

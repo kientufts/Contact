@@ -24,4 +24,10 @@ public class ContactDAOImpl implements ContactDAO {
 		return contacts;
 	}
 
+	@Override
+	public void addContact(Contact contact) {
+		Session session = sessionFactory.getCurrentSession();
+		session.save(contact);
+	}
+
 }

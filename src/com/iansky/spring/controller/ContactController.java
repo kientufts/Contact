@@ -37,6 +37,7 @@ public class ContactController {
 	
 	@PostMapping("/addContact")
 	public String addContact(@ModelAttribute("contact") Contact contact) {
+		contactService.addContact(contact);
 		return "redirect:/contact/list";
 	}
 
