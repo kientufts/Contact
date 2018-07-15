@@ -25,5 +25,10 @@ public class ContactController {
 		model.addAttribute("contacts", contacts);
 		return "list-contacts";
 	}
+	
+	@GetMapping("/showFormForAdd")
+	public String showFormForAdd(Model model) {
+		return "contact-form";
+	}
 
 }
