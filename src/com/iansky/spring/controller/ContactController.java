@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.iansky.spring.entity.Contact;
@@ -31,6 +33,11 @@ public class ContactController {
 		Contact contact = new Contact();
 		model.addAttribute("contact", contact);
 		return "contact-form";
+	}
+	
+	@PostMapping("/addContact")
+	public String addContact(@ModelAttribute("contact") Contact contact) {
+		return "redirect:/contact/list";
 	}
 
 }
