@@ -28,6 +28,8 @@ public class ContactController {
 	
 	@GetMapping("/showFormForAdd")
 	public String showFormForAdd(Model model) {
+		Contact contact = new Contact();
+		model.addAttribute("contact", contact);
 		return "contact-form";
 	}
 
