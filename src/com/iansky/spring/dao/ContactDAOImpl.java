@@ -19,7 +19,7 @@ public class ContactDAOImpl implements ContactDAO {
 	@Override
 	public List<Contact> getContacts() {
 		Session session = sessionFactory.getCurrentSession();
-		Query<Contact> query = session.createQuery("from Contact", Contact.class);
+		Query<Contact> query = session.createQuery("from Contact order by lastName", Contact.class);
 		List<Contact> contacts = query.getResultList();
 		return contacts;
 	}
