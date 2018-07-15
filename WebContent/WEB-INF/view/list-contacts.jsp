@@ -36,11 +36,19 @@
 						<c:param name="contactId" value="${tempContact.id}"></c:param>
 					</c:url>
 					
+					<c:url var="deleteLink" value="/contact/delete">
+						<c:param name="contactId" value="${tempContact.id}"></c:param>
+					</c:url>
+					
 					<tr>
 						<td>${tempContact.firstName}</td>
 						<td>${tempContact.lastName}</td>
 						<td>${tempContact.email}</td>
-						<td><a href="${updateLink}">Update</a></td>
+						<td>
+							<a href="${updateLink}">Update</a>
+							|
+							<a href="${deleteLink}" onclick="if (!(confirm('Are you sure you want to delete this contact?'))) return false">Delete</a>
+						</td>
 					</tr>
 				</c:forEach>
 			</table>

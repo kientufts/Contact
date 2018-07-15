@@ -33,4 +33,10 @@ public class ContactServiceImpl implements ContactService {
 		return contactDAO.getContact(contactId);
 	}
 
+	@Override
+	@Transactional
+	public void deleteContact(int contactId) {
+		contactDAO.deleteContact(contactId);
+	}
+
 }

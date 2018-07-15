@@ -37,4 +37,12 @@ public class ContactDAOImpl implements ContactDAO {
 		return contact;
 	}
 
+	@Override
+	public void deleteContact(int contactId) {
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("delete from Contact where id=:contactId");
+		query.setParameter("contactId", contactId);
+		query.executeUpdate();
+	}
+
 }
