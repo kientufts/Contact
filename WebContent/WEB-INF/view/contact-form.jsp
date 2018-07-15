@@ -43,6 +43,10 @@
 					<tr>
 				</tbody>
 			</table>
+			
+			<!-- User hidden form fields to associate this data with contact id for updating -->
+			<form:hidden path="id"/>
+			
 		</form:form>
 		
 		<div style="clear; both;">

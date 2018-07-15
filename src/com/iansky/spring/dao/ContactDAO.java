@@ -9,4 +9,6 @@ public interface ContactDAO {
 	public List<Contact> getContacts();
 
 	public void addContact(Contact contact);
+
+	public Contact getContact(int contactId);
 }
