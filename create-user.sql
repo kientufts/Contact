@@ -1,3 +1,3 @@
-CREATE USER 'kienletufts'@'localhost' IDENTIFIED BY 'kienletufts';
+CREATE USER 'springstudent'@'localhost' IDENTIFIED BY 'springstudent';
 
-GRANT ALL PRIVILEGES ON * . * TO 'kienletufts'@'localhost';
+GRANT ALL PRIVILEGES ON * . * TO 'springstudent'@'localhost';
