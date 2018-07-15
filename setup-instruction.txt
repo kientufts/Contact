@@ -2,8 +2,10 @@ Contact Manager Application - Set up Instruction
 
 To run the application, follow the steps below:
 
-1. Run the database script (contact-manager.sql) to create database table and load sample data
+1. Create MySQl connection user (create-user.sql)
 
-2. Open the source code for
+2. Run the database script (contact-manager.sql) to create database table and load sample data
 
-3. Run the application on server
+3. Open the source code for
+
+4. Run the application on server
